@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: springiva
+      POSTGRES_PASSWORD: springiva
+      POSTGRES_DB: springiva
+    ports:
+      - "5432:5432"
+    volumes:
+      - springiva_pgdata:/var/lib/postgresql/data
+
+volumes:
+  springiva_pgdata:
